@@ -1,0 +1,55 @@
+/* src/components/Menu.css */
+
+.menu {
+  position: fixed;
+  top: 20px; /* Ajusta este valor para separar el menú de la parte superior */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #27BF08;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  margin: 0 10px;
+}
+
+.menu-item.logout {
+  margin-left: auto;
+}
+
+.menu-item.logout button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font: inherit;
+}
+
+.menu-item.logout button:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    margin: 5px 0;
+  }
+
+  .menu-item.logout {
+    margin-left: 0; /* Resetea el margen cuando en pantalla pequeña */
+  }
+}

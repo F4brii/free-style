@@ -8,7 +8,6 @@ const LoginPage = () => {
     try {
       const response = await login(email, password);
       console.log("Login successful:", response);
-      // Aquí puedes redirigir al usuario o guardar el token en el estado global o en localStorage
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("Login failed: " + error.message);
@@ -21,7 +20,7 @@ const LoginPage = () => {
         <LoginForm onLogin={handleLogin} />
         <div className="vertical-divider"></div>
         <div className="login-image">
-          <img src="your-image-url.jpg" alt="Login" />
+          <img src="./logo-freestyle.jpeg" alt="Login" className="login-img" />
         </div>
       </div>
     </div>

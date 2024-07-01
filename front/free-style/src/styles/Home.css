@@ -1,0 +1,23 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.message {
+  text-align: center;
+  color: #fbbf11; /* Amarillo */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.message h2 {
+  color: #ed7403; /* Naranja */
+}
+
+.message p {
+  color: #fff; /* Blanco para el texto */
+}

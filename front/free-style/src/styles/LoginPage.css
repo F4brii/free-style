@@ -2,21 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Añadido para colocar el texto debajo del formulario */
-  height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
-  background-color: #f0f0f0; /* Opcional: un color de fondo ligero */
+  flex-direction: column; 
+  height: 100vh; 
+  background-color: #e8f7e5; 
 }
 
 .login-container {
   display: flex;
   align-items: center;
   padding: 20px;
-  margin-bottom: 20px; /* Espacio entre el contenedor y el texto de registro */
+  margin-bottom: 20px; 
 }
 
 .vertical-divider {
-  border-left: 2px dashed #ccc;
-  height: 400px; /* Ajusta la altura para asegurarte de que la línea sea visible */
+  border-left: 2px dashed #27BF08;
+  height: 400px; 
   margin: 0 20px;
 }
 
@@ -38,6 +38,12 @@
 
 .register-link a:hover {
   text-decoration: underline;
+}
+
+.login-image .login-img {
+  max-width: 500px; /* Tamaño máximo de la imagen */
+  height: auto;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
