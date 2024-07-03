@@ -12,8 +12,8 @@
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  width: calc(100% - 40px);
-  max-width: 1200px;
+  width: calc(100% - 50px);
+  max-width: 1000px;
   flex-wrap: wrap;
 }
 
@@ -50,6 +50,6 @@
   }
 
   .menu-item.logout {
-    margin-left: 0; /* Resetea el margen cuando en pantalla pequeña */
+    margin-left: 0; 
   }
 }
