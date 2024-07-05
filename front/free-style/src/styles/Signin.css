@@ -1,0 +1,96 @@
+.signin-container {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+    padding: 150px;
+}
+.tituloregistro{
+    color: #008000;
+    text-align:start;
+    width: 100%;
+
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+.form-container {
+    flex: 1;
+    max-width: 500px;
+    margin-right: 50px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.labelregistro {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width: 200px;
+}
+input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #008000;
+    border-radius: 5px;
+}
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+input[type="password"], input[type="text"], input[type="email"] {
+    flex-grow: 1;
+}
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.botonregistro {
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+    font-size: 30px;
+    margin-left: 150px;
+
+}
+.required {
+    color: red;
+    font-size: 10px;
+    margin-left: 0px;
+}
+.password-note {
+    font-size: 10px;
+    color: gray;
+    margin-top: -10px;
+}
+.side-image {
+    text-align: center;
+    flex: 1;
+    max-width: 500px;
+}
+.side-image img {
+    max-width: 100%;
+    height: auto;
+    width: 2000px; /* Ajusta este valor según el tamaño deseado */
+}
+.mandatory-note {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
