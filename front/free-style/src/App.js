@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import BasePage from "./pages/BasePage";
 import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import Precios from "./pages/Precios";
 import ReservationPage from "./pages/ReservationPage";
-import RatePage from "./pages/RatePage";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
           <Route path="/" element={<BasePage />}>
             <Route index element={<Home />} />
             <Route path="reservation" element={<ReservationPage />} />
-            <Route path="rate" element={<RatePage />} />
+            <Route path="precios" element={<Precios />} />
           </Route>
           <Route path="/login" element={<LoginPage />} />
         </Routes>

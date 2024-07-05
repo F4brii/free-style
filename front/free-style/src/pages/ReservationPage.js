@@ -1,6 +1,6 @@
 import React from "react";
 import Note from "../components/Note";
-import "../styles/ReservationPage.css"; 
+import "../styles/ReservationPage.css";
 
 const ReservationPage = () => {
   const data = [
@@ -31,12 +31,12 @@ const ReservationPage = () => {
   ];
 
   const reservationNoteMessage = "Las reservas en las franjas horarias de tipo no regular, requieren reserva individual hasta 10 jugadores.";
-  const rateNoteMessage = "Las franjas de tipo no regular tienen una tarifa especial, puede validar en el siguien enlace";
+  const rateNoteMessage = "Las franjas de tipo no regular tienen una tarifa especial, puede validar en el siguiente ";
 
   return (
     <div className="reservation-page">
       <Note message={reservationNoteMessage} />
-      <Note message={rateNoteMessage} />
+      <Note message={rateNoteMessage }  /> <a href="/Precios">enlace</a>
       <table>
         <thead>
           <tr>

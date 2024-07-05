@@ -1,0 +1,37 @@
+.tabla-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+.tabla-precios{
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.amarillo,.azul,.cabezapre {
+    padding: 12px;
+    text-align: left;
+    font-size: large;
+}
+.cabezapre {
+    background-color: #c5cfcf;
+}
+
+.azul {
+    background-color: #aafafc;
+}
+.amarillo {
+    background-color: #f0fa9a;
+}
+.azul:hover, .amarillo:hover{
+    background-color: #f1f1f1;
+}
+.amarillo,.azul,.cabezapre {
+    border-bottom: 1px solid #ddd;
+}

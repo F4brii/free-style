@@ -13,7 +13,7 @@ const Menu = () => {
     <nav className="menu">
       <Link to="/" className="menu-item">Inicio</Link>
       <Link to="/reservation" className="menu-item">Reservar</Link>
-      <Link to="/rate" className="menu-item">Horarios y trafias</Link>
+      <Link to="/precios" className="menu-item">Horarios y trafias</Link>
       <div className="menu-item logout">
         <button onClick={handleLogout}>Cerrar sesión</button>
       </div>
