@@ -1,16 +1,16 @@
 import React from "react";
-import '../styles/LoginPage.css';
+import "../styles/LoginPage.css";
 import { login } from "../services/authService";
 import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
   const handleLogin = async (email, password) => {
     try {
-      const response = await login(email, password);
-      console.log("Login successful:", response);
+      return await login(email, password);
     } catch (error) {
-      console.error("Login failed:", error.message);
-      alert("Login failed: " + error.message);
+      return {
+        success: false
+      };
     }
   };
 
@@ -28,4 +28,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

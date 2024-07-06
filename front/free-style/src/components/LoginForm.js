@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate  } from 'react-router-dom';
+
 import "../styles/LoginForm.css";
 
+import { AuthContext } from "../context/AuthContext";
+
 const LoginForm = ({ onLogin }) => {
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate ();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onLogin(email, password);
+    const { success } = await onLogin(email, password);
+    if (success) {
+      login();
+      navigate('/');
+    }
   };
 
   return (
@@ -43,7 +53,7 @@ const LoginForm = ({ onLogin }) => {
         </form>
       </div>
       <div className="register-link">
-        ¿No tienes cuenta?, <a href="#">regístrate</a>.
+        ¿No tienes cuenta?, <a href="/signin">regístrate</a>.
       </div>
     </div>
   );

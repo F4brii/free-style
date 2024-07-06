@@ -1,7 +1,7 @@
 export const login = async (email, password) => {
-  if (email === "test@example.com" && password === "password") {
-    return { success: true, token: "fake-jwt-token" };
+  if (email === "admin@example.com" && password === "admin") {
+    return { success: true };    
   } else {
-    throw new Error("Invalid email or password");
+    return { success: false };
   }
 };
