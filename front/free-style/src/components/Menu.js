@@ -1,5 +1,3 @@
-// src/components/Menu.js
-
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -22,7 +20,7 @@ const Menu = () => {
         Reservar
       </Link>
       <Link to="/precios" className="menu-item">
-        Horarios y trafias
+        Horarios y tarifas
       </Link>
       {isAuthenticated ? (
         <div className="menu-item logout">

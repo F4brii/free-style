@@ -1,11 +1,9 @@
-/* src/components/Menu.css */
-
 .menu {
   position: fixed;
-  top: 20px; /* Ajusta este valor para separar el menú de la parte superior */
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #27BF08;
+  background-color: #27bf08;
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,6 +17,7 @@
 
 .menu-item {
   margin: 0 10px;
+  text-decoration: none; /* Quitar subrayado de todos los enlaces */
 }
 
 .menu-item.logout {
@@ -30,9 +29,9 @@
   border: none;
   color: #007bff;
   cursor: pointer;
-  text-decoration: underline;
   padding: 0;
   font: inherit;
+  text-decoration: underline; /* Subrayado solo en hover */
 }
 
 .menu-item.logout button:hover {
@@ -40,10 +39,10 @@
 }
 
 .menu-item.logout button[disabled] {
-  color: #ccc; /* Color de texto gris para indicar deshabilitado */
-  cursor: not-allowed; /* Cursor de no permitido para indicar deshabilitado */
-  text-decoration: none; /* Quitar subrayado */
-  pointer-events: none; /* Evitar eventos de clic */
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none; /* Quitar subrayado cuando está deshabilitado */
 }
 
 @media (max-width: 768px) {
@@ -54,9 +53,10 @@
 
   .menu-item {
     margin: 5px 0;
+    text-decoration: none; /* Quitar subrayado en dispositivos móviles */
   }
 
   .menu-item.logout {
-    margin-left: 0; 
+    margin-left: 0;
   }
 }
