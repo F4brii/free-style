@@ -39,6 +39,13 @@
   color: #0056b3;
 }
 
+.menu-item.logout button[disabled] {
+  color: #ccc; /* Color de texto gris para indicar deshabilitado */
+  cursor: not-allowed; /* Cursor de no permitido para indicar deshabilitado */
+  text-decoration: none; /* Quitar subrayado */
+  pointer-events: none; /* Evitar eventos de clic */
+}
+
 @media (max-width: 768px) {
   .menu {
     flex-direction: column;

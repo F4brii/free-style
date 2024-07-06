@@ -7,7 +7,7 @@ import { AuthContext } from "../context/AuthContext";
 import "../styles/Menu.css";
 
 const Menu = () => {
-  const { logout } = useContext(AuthContext);
+  const { logout, isAuthenticated } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout();
@@ -24,9 +24,15 @@ const Menu = () => {
       <Link to="/precios" className="menu-item">
         Horarios y trafias
       </Link>
-      <div className="menu-item logout">
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      </div>
+      {isAuthenticated ? (
+        <div className="menu-item logout">
+          <button onClick={handleLogout}>Cerrar sesión</button>
+        </div>
+      ) : (
+        <div className="menu-item logout disabled">
+          <button disabled>Cerrar sesión</button>
+        </div>
+      )}
     </nav>
   );
 };
