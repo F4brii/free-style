@@ -1,0 +1,54 @@
+.body-detalles{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.detalles-container {
+    background-color: #fff;
+    border: 2px solid #008000;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+}
+.detalles-container h2 {
+    background-color: #c5cfcf;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: -20px -20px 20px -20px;
+    text-align: center;
+}
+.detalles-container p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.detalles-container p span {
+    font-weight: bold;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.buttons button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cancel-btn {
+    background-color: #ff0000;
+    color: #fff;
+}
+.confirm-btn {
+    background-color: #008000;
+    color: #fff;
+}
