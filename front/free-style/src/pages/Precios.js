@@ -12,8 +12,21 @@ const Precios = () => {
         "horario": "10:00 am - 4:00 am",
         "precio" : "5000"
     }];
+
     return (
-        <div className="tabla-container">
+        <div className="contenedor">
+            <div className="mensaje-container">
+            <p>
+                A continuación, te presentamos nuestros horarios y precios. Contamos con dos tipos de horarios:
+                <br />
+                <br />
+                <b>1. Horarios Regulares:</b> Jugarás con tu equipo y se aplicará un precio grupal.<br />
+                <b>2. Horarios No Regulares:</b> Jugarás de manera individual y tanto el cobro como la inscripción serán individuales.<br />
+            <br />
+                ¡Reserva ahora y no te pierdas la experiencia de Freestyle!
+            </p>
+            </div>
+            <div className="tabla-container2">
         <table className="tabla-precio">
             <thead className="cabezapre">
                     <tr>
@@ -24,7 +37,7 @@ const Precios = () => {
             </thead>
             <tbody className="azul">
             {pre.map((pre, index) => (
-            <tr key={index}>
+            <tr key={index} className={index % 2 === 0 ? "azul" : "amarillo"}>
                 <td>{pre.tipo}</td>
                 <td>{pre.horario}</td>
                 <td>{pre.precio}</td>
@@ -32,6 +45,7 @@ const Precios = () => {
             ))}
             </tbody>
         </table>
+        </div>
         </div>
     );
     };
