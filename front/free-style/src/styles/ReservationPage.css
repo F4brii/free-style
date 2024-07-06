@@ -1,24 +1,86 @@
 /* src/styles/ReservationPage.css */
+
 .reservation-page {
     display: flex;
     flex-direction: column;
     align-items: left;
     padding: 20px;
-}
+  }
   
-table {
+  table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 10px;
     margin-top: 20px;
-}
+  }
   
-th, td {
-    border: 1px solid black;
-    padding: 8px;
+  th {
+    background-color: #e8f7e5;
+    border: none; /* Agregamos borde a la cabecera */
+    padding: 12px;
     text-align: left;
-}
+  }
   
-th {
-    background-color: #f2f2f2;
-}
+  td {
+    padding: 12px;
+    text-align: left;
+    border: none; /* Borde de las celdas de datos */
+  }
+  
+  tbody td:first-child {
+    border-top-left-radius: 8px; /* Redondear la esquina superior izquierda del primer td */
+    border-bottom-left-radius: 8px; /* Redondear la esquina inferior izquierda del primer td */
+  }
+  
+  tbody td:last-child {
+    border-top-right-radius: 8px; /* Redondear la esquina superior derecha del último td */
+    border-bottom-right-radius: 8px; /* Redondear la esquina inferior derecha del último td */
+  }
+  
+  tr:last-child td {
+    border-bottom: none; /* Quitamos la línea de abajo del último td */
+  }
+  
+  .regular-row {
+    background-color: #0367df; /* Color azul para tipo Regular */
+    color: #fff; /* Texto blanco en fondo azul */
+  }
+  
+  .no-regular-row {
+    background-color: #fbbf11; /* Color amarillo para tipo No regular */
+  }
+  
+  table button {
+    background-color: #27BF08; /* Fondo verde */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #000; /* Borde delineado negro */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  table button:hover {
+    opacity: 0.8; /* Opacidad al pasar el mouse */
+  }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: transparent; /* Quitar fondo */
+    color: #0367df; /* Color azul para texto */
+    border: none; /* Quitar borde */
+    margin: 0 5px; /* Espacio entre botones */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  .pagination button:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+  }
   

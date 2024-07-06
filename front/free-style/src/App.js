@@ -38,17 +38,9 @@ const App = () => {
                   </PrivateRoute>
                 }
               />
-              <Route
-                path="precios"
-                element={
-                  <PrivateRoute>
-                    <Precios />
-                  </PrivateRoute>
-                }
-              />
+              <Route path="precios" element={<Precios />} />
             </Route>
             <Route path="/signin" element={<Signin />} />
-            <Route path="detalles" element={<Detalles />} />
           </Routes>
         </div>
       </AuthProvider>

@@ -1,0 +1,80 @@
+/* src/styles/Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.modal-content p span {
+    font-weight: bold;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .modal-button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cancel-btn {
+    background-color: #ff0000;
+    color: #fff;
+  }
+  
+  .confirm-btn {
+    background-color: #008000;
+    color: #fff;
+  }
+
+  .modal-content h2 {
+    background-color: #c5cfcf;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: -20px -20px 20px -20px;
+    text-align: center;
+}
+  

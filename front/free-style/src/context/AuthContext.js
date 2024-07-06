@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
       const id = setTimeout(() => {
         setIsAuthenticated(false);
         navigate("/login");
-      }, 3600000); // 1 hora en milisegundos
+      }, 3600000); 
       setTimeoutId(id);
     }
 

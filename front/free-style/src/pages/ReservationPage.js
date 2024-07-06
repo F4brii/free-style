@@ -1,64 +1,155 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Note from "../components/Note";
+import DetailModal from "../components/DetailModal";
 import "../styles/ReservationPage.css";
 
 const ReservationPage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedReservation, setSelectedReservation] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(2); // Número de elementos por página
+
   const data = [
     {
       id: 1,
-      column1: "Data 1",
-      column2: "Data 2",
-      column3: "Data 3",
-      column4: "Data 4",
-      column5: "Data 5",
+      tipo: "Regular",
+      horario: "6:00 a.m - 7:00 a.m",
+      cancha: 1,
+      estado: "Ocupado",
+      participantes: 0,
     },
     {
       id: 2,
-      column1: "Data 6",
-      column2: "Data 7",
-      column3: "Data 8",
-      column4: "Data 9",
-      column5: "Data 10",
+      tipo: "Regular",
+      horario: "6:00 a.m - 7:00 a.m",
+      cancha: 2,
+      estado: "Ocupado",
+      participantes: 0,
     },
     {
       id: 3,
-      column1: "Data 11",
-      column2: "Data 12",
-      column3: "Data 13",
-      column4: "Data 14",
-      column5: "Data 15",
+      tipo: "Regular",
+      horario: "6:00 a.m - 7:00 a.m",
+      cancha: 6,
+      estado: "Disponible",
+      participantes: 0,
+    },
+    {
+      id: 4,
+      tipo: "No regular",
+      horario: "8:00 a.m - 9:00 a.m",
+      cancha: 2,
+      estado: "Parcialmente ocupado",
+      participantes: 4,
     },
   ];
 
-  const reservationNoteMessage = "Las reservas en las franjas horarias de tipo no regular, requieren reserva individual hasta 10 jugadores.";
-  const rateNoteMessage = "Las franjas de tipo no regular tienen una tarifa especial, puede validar en el siguiente ";
+  const reservationNoteMessage =
+    "Las reservas en las franjas horarias de tipo no regular, requieren reserva individual hasta 10 jugadores.";
+
+  const handleReservationClick = (id) => {
+    const reservation = data.find((item) => item.id === id);
+    setSelectedReservation(reservation);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  // Calcular índices para la paginación
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Cambiar de página
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="reservation-page">
+      <h1>Reservas de Canchas</h1>
       <Note message={reservationNoteMessage} />
-      <Note message={rateNoteMessage }  /> <a href="/Precios">enlace</a>
+      <Note
+        message={
+          <p>
+            Las franjas de tipo no regular tienen una tarifa especial, puede
+            validar en el siguiente <Link to="/precios">enlace</Link>.
+          </p>
+        }
+      />
       <table>
         <thead>
           <tr>
             <th>Horarios</th>
-            <th>Numero de cancha</th>
-            <th>Estado</th>
-            <th> </th>
-            <th>Acciones</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          {data.map(row => (
-            <tr key={row.id}>
-              <td>{row.column1}</td>
-              <td>{row.column2}</td>
-              <td>{row.column3}</td>
-              <td>{row.column4}</td>
-              <td>{row.column5}</td>
+          {currentItems.map((row) => (
+            <tr
+              key={row.id}
+              className={row.tipo === "Regular" ? "regular-row" : "no-regular-row"}
+            >
+              <td>{row.horario}</td>
+              <td>Cancha #{row.cancha}</td>
+              <td>Estado: {row.estado}</td>
+              <td>
+                {row.tipo !== "Regular" && (
+                  <>
+                    {row.participantes} / 10
+                  </>
+                )}
+              </td>
+              <td>
+                <button onClick={() => handleReservationClick(row.id)}>
+                  Reservar
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {/* Paginación */}
+      <div className="pagination">
+        <button
+          onClick={() => paginate(1)}
+          disabled={currentPage === 1}
+        >
+          Primera
+        </button>
+        <button
+          onClick={() => paginate(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+        >
+          Siguiente
+        </button>
+        <button
+          onClick={() => paginate(Math.ceil(data.length / itemsPerPage))}
+          disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+        >
+          Última
+        </button>
+      </div>
+      <DetailModal isOpen={modalOpen} onClose={closeModal}>
+        {selectedReservation && (
+          <> 
+            <h2>Detalles de la reserva</h2>
+            <p>Horario: {selectedReservation.horario}</p>
+            <p>Cancha: {selectedReservation.cancha}</p>
+            <p>Estado: {selectedReservation.estado}</p>
+          </>
+        )}
+      </DetailModal>
     </div>
   );
 };
