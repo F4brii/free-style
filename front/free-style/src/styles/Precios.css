@@ -1,24 +1,48 @@
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.mensaje-container {
+    width: 100%;
+    margin-bottom: 40px; 
+    text-align:start;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    border: 2px solid #30cd11;
+    border-radius: 20px;
+}
+
 .tabla-container {
-    font-family: Arial, sans-serif;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 70vh;
-    margin: 0;
 }
-.tabla-precios{
+
+.tabla-container2 {
     width: 100%;
     max-width: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.tabla-precios {
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
-.amarillo,.azul,.cabezapre {
+
+.amarillo, .azul, .cabezapre {
     padding: 12px;
     text-align: left;
     font-size: large;
 }
+
 .cabezapre {
     background-color: #c5cfcf;
 }
@@ -26,12 +50,15 @@
 .azul {
     background-color: #aafafc;
 }
+
 .amarillo {
     background-color: #f0fa9a;
 }
-.azul:hover, .amarillo:hover{
+
+.azul:hover, .amarillo:hover {
     background-color: #f1f1f1;
 }
-.amarillo,.azul,.cabezapre {
+
+.amarillo, .azul, .cabezapre {
     border-bottom: 1px solid #ddd;
 }
