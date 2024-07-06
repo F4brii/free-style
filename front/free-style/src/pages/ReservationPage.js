@@ -8,7 +8,7 @@ const ReservationPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(2); // Número de elementos por página
+  const [itemsPerPage] = useState(4); // Número de elementos por página
 
   const data = [
     {
@@ -36,10 +36,50 @@ const ReservationPage = () => {
       participantes: 0,
     },
     {
+      id: 9,
+      tipo: "Regular",
+      horario: "6:00 a.m - 7:00 a.m",
+      cancha: 6,
+      estado: "Disponible",
+      participantes: 0,
+    },
+    {
+      id: 6,
+      tipo: "Regular",
+      horario: "6:00 a.m - 7:00 a.m",
+      cancha: 6,
+      estado: "Disponible",
+      participantes: 0,
+    },
+    {
       id: 4,
       tipo: "No regular",
       horario: "8:00 a.m - 9:00 a.m",
       cancha: 2,
+      estado: "Parcialmente ocupado",
+      participantes: 4,
+    },
+    {
+      id: 5,
+      tipo: "No regular",
+      horario: "10:00 a.m - 11:00 a.m",
+      cancha: 3,
+      estado: "Parcialmente ocupado",
+      participantes: 4,
+    },
+    {
+      id: 7,
+      tipo: "No regular",
+      horario: "10:00 a.m - 11:00 a.m",
+      cancha: 3,
+      estado: "Parcialmente ocupado",
+      participantes: 4,
+    },
+    {
+      id: 8,
+      tipo: "No regular",
+      horario: "10:00 a.m - 11:00 a.m",
+      cancha: 3,
       estado: "Parcialmente ocupado",
       participantes: 4,
     },

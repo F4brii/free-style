@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import "../styles/LoginForm.css";
 
@@ -9,14 +9,18 @@ const LoginForm = ({ onLogin }) => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate ();
+  const [error, setError] = useState(null); // Estado para manejar el mensaje de error
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { success } = await onLogin(email, password);
     if (success) {
       login();
-      navigate('/');
+      navigate("/reservation");
+    } else {
+      setError("Error: Credenciales incorrectas"); // Establecer el mensaje de error
+      setPassword(""); // Limpiar el campo de contraseña
     }
   };
 
@@ -24,6 +28,7 @@ const LoginForm = ({ onLogin }) => {
     <div>
       <h2 className="login-title">Iniciar sesión</h2>
       <div className="login-form">
+        {error && <div className="error-message">{error}</div>} {/* Mostrar el mensaje de error si existe */}
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">

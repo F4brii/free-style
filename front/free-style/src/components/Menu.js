@@ -1,5 +1,3 @@
-// src/components/Menu.js
-
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -7,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import "../styles/Menu.css";
 
 const Menu = () => {
-  const { logout } = useContext(AuthContext);
+  const { logout, isAuthenticated } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout();
@@ -22,11 +20,17 @@ const Menu = () => {
         Reservar
       </Link>
       <Link to="/precios" className="menu-item">
-        Horarios y trafias
+        Horarios y tarifas
       </Link>
-      <div className="menu-item logout">
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      </div>
+      {isAuthenticated ? (
+        <div className="menu-item logout">
+          <button onClick={handleLogout}>Cerrar sesión</button>
+        </div>
+      ) : (
+        <div className="menu-item logout disabled">
+          <button disabled>Cerrar sesión</button>
+        </div>
+      )}
     </nav>
   );
 };
