@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "../styles/LoginForm.css";
 
@@ -58,7 +58,7 @@ const LoginForm = ({ onLogin }) => {
         </form>
       </div>
       <div className="register-link">
-        ¿No tienes cuenta?, <a href="/signin">regístrate</a>.
+        ¿No tienes cuenta?, <Link to="/signin">regístrate</Link>.
       </div>
     </div>
   );
