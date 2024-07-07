@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="com.proyectofinal_freestyle_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.proyectofinal.freestyle.model.TlFsUsuario</class>
+    <class>com.proyectofinal.freestyle.model.TlFsHorario</class>
+    <class>com.proyectofinal.freestyle.model.TlFsCancha</class>
+    <class>com.proyectofinal.freestyle.model.TlFsReserva</class>
+    <class>com.proyectofinal.freestyle.model.TlFsTipodoc</class>
+    <class>com.proyectofinal.freestyle.model.TlFsFecha</class>
+    <class>com.proyectofinal.freestyle.model.TlFsPago</class>
+    <class>com.proyectofinal.freestyle.model.TlFsEstado</class>
+    <class>com.proyectofinal.freestyle.model.TlFsTarifa</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://postgresql-177631-0.cloudclusters.net:10100/FreeStyle"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Sofia2105*"/>
+    </properties>
+  </persistence-unit>
+</persistence>
